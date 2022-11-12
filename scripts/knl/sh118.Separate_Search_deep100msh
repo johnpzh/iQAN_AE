@@ -1,0 +1,75 @@
+#!/usr/local/bin/zsh
+
+set -x
+
+#data_dir="/scratch/zpeng/data"
+data_dir="/home/zpeng/data"
+#data_dir="/scratch/zpeng"
+data=deep100m
+
+####################################
+#### PSS Multiple Threads
+####################################
+bin="python3 ../scripts/test51.PSS_v5_dt_profiling_ranged_L.py"
+app="PSS_v5_LG_separate_search"
+#K=10
+app_tag="PSS_v5_separate_search"
+################################
+#### Latency
+################################
+
+#############
+# 32 Threads
+#############
+#for num_t in 8; do
+#for num_t in 32; do
+num_t=8
+
+P_target=0.999
+L_Seq=3340
+L_low=3340
+L_up=3340
+L_step=100
+X_low=17
+X_up=17
+X_step=4
+tag="${app_tag}_T${num_t}_P${P_target}"
+eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
+table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
+selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
+python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
+
+P_target=0.995
+L_Seq=1143
+L_low=1143
+L_up=1143
+L_step=20
+X_low=17
+X_up=17
+X_step=4
+tag="${app_tag}_T${num_t}_P${P_target}"
+eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
+table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
+selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
+python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
+
+P_target=0.990
+L_Seq=711
+L_low=711
+L_up=711
+L_step=20
+X_low=17
+X_up=17
+X_step=4
+tag="${app_tag}_T${num_t}_P${P_target}"
+eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
+table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
+selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
+python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
+#done
+
+######
+
+set +x
+
+
