@@ -3,6 +3,13 @@ cmake-build-*/
 cmake-build-debug-remote/
 .idea/
 venv/
+build/
+
+# Dataset
+sift_base.fvecs
+sift_query.fvecs
+sift.nsg
+sift.true-100_NN.v2.binary
 
 # MacOS
 .DS_Store
