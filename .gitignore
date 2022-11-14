@@ -4,9 +4,6 @@ cmake-build*/
 venv/
 build/
 
-# Dataset
-data/*
-
 # MacOS
 .DS_Store
 
