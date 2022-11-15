@@ -102,3 +102,10 @@ target_compile_options(
 target_link_libraries(
         profile_find_L_seq_single_query_simple_search_large_graph
         PRIVATE ${Boost_LIBRARIES} OpenMP::OpenMP_CXX NSG)
+
+add_executable(
+        hnsw_search
+        app/hnsw_search.cpp)
+target_link_libraries(
+        hnsw_search
+        PRIVATE OpenMP::OpenMP_CXX)

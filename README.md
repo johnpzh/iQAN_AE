@@ -57,9 +57,9 @@ cd cmake-build-release
 
 Then run the script.
 ```shell
-bash ../scripts/run.sift1m.sh
+bash ../scripts/run.quick.sh
 ```
 
-This script runs iQAN and NSG for recall target (Recall@100) from 0.9 to 0.999 on the dataset SIFT1M. It takes about 30 mins to finish. It can generate a figure `fig.sift1m.png` under the current directory `cmake-build-release`.
+This script runs iQAN, NSG, and HNSW for six recall target (Recall@100) from 0.9 to 0.999 on the dataset SIFT1M. It takes about 30 mins to finish. It can generate a figure `fig.quick.png` under the current directory `cmake-build-release`.
 
 [//]: # (## Step by Step Instructions)

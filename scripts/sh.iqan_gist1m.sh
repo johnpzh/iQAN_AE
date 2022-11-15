@@ -26,7 +26,7 @@ if [ $# -ne 1 ]; then
 fi
 
 data_dir="$1"
-data=gist1m
+data="gist1m"
 
 ####################################
 #### PSS Multiple Threads

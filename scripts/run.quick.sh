@@ -1,5 +1,5 @@
 
-data="sift100m"
+data="quick"
 script_root=$(dirname "$0")/../scripts
 data_root=$(dirname "$0")/../data
 bin_root=$(dirname "$0")/../cmake-build-release
