@@ -1,4 +1,5 @@
 # iQAN Performance Evaluation
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7322631.svg)](https://doi.org/10.5281/zenodo.7322631)
 
 ## Getting Started Guide
 
@@ -76,3 +77,4 @@ Here `xxx` can be replaced by `sift1m`, `gist1m`, `deep10m`, `sift100m`, and `de
 |    query file (MB)    |      5 |    3.7 |     3.8 |        5 |      3.8 |
 | groundtruth file (MB) |    7.7 |    0.7 |     7.7 |      7.7 |      7.7 |
 |   running time (hr)   |      1 |      6 |       5 |       16 |       22 |
+[//]: # (## Step by Step Instructions)
