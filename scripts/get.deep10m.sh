@@ -9,16 +9,26 @@ fi
 cd "${data_dir}/${data}" || exit
 
 # Base
-wget -O deep10M_base.fvecs https://www.dropbox.com/s/80iowngcpclglsw/deep10M_base.fvecs?dl=0
+if [ ! -e deep10M_base.fvecs ]; then
+    wget -O deep10M_base.fvecs https://www.dropbox.com/s/80iowngcpclglsw/deep10M_base.fvecs?dl=0
+fi
 
 # Query
-wget -O deep10M_query.fvecs https://www.dropbox.com/s/45m715qs57suuba/deep10M_query.fvecs?dl=0
+if [ ! -e deep10M_query.fvecs ]; then
+    wget -O deep10M_query.fvecs https://www.dropbox.com/s/45m715qs57suuba/deep10M_query.fvecs?dl=0
+fi
 
 # NSG File
-wget -O deep10M.nsg https://www.dropbox.com/s/nl76jsszxg8hgv4/deep10M.nsg?dl=0
+if [ ! -e deep10M.nsg ]; then
+    wget -O deep10M.nsg https://www.dropbox.com/s/nl76jsszxg8hgv4/deep10M.nsg?dl=0
+fi
 
 # HNSW File
-wget -O deep10M.hnsw https://www.dropbox.com/s/tdclcuvsiys26dr/deep10M.hnsw?dl=0
+if [ ! -e deep10M.hnsw ]; then
+    wget -O deep10M.hnsw https://www.dropbox.com/s/tdclcuvsiys26dr/deep10M.hnsw?dl=0
+fi
 
 # Groundtruth file
-wget -O deep10M.true-100_NN.v2.binary https://www.dropbox.com/s/f3g50esj2evcnzw/deep10M.true-100_NN.v2.binary?dl=0
+if [ ! -e deep10M.true-100_NN.v2.binary ]; then
+    wget -O deep10M.true-100_NN.v2.binary https://www.dropbox.com/s/f3g50esj2evcnzw/deep10M.true-100_NN.v2.binary?dl=0
+fi
