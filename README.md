@@ -1,5 +1,5 @@
 # iQAN Performance Evaluation
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7322631.svg)](https://doi.org/10.5281/zenodo.7322631)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7322632.svg)](https://doi.org/10.5281/zenodo.7322631)
 
 ## Getting Started Guide
 
