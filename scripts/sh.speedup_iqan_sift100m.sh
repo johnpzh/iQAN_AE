@@ -21,64 +21,36 @@ function get_X_low () {
 set -x
 
 if [ $# -ne 1 ]; then
-    echo "Usage: bash $0 <data_dir>"
+    echo "Usage: $0 <data_dir>"
     exit
 fi
 
 data_dir="$1"
-data="sift1m"
+data="sift100m"
 
 ####################################
 #### PSS Multiple Threads
 ####################################
 bin="python3 ../scripts/test51.PSS_v5_dt_profiling_ranged_L.py"
-app="PSS_v5_distance_threshold_profiling"
+app="PSS_v5_LG_distance_threshold_profiling"
 
-app_tag="iQAN_Latency"
+app_tag="iQAN_Speedup"
 ################################
 #### Latency
 ################################
 
 # number of threads
-#for num_t in 2 4 8 16 32; do
-for num_t in 32; do
-#
-    P_target=0.900
-    L_Seq=90
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
-    L_step=1
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
-    X_step=1
-    tag="${app_tag}_T${num_t}_P${P_target}"
-    eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
-    table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
-    selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
-    python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
-
-    P_target=0.950
-    L_Seq=96
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
-    L_step=1
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
-    X_step=1
-    tag="${app_tag}_T${num_t}_P${P_target}"
-    eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
-    table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
-    selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
-    python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
+#for num_t in 32; do
+for num_t in 64 32 16 8 4 2 1; do
 
     P_target=0.990
-    L_Seq=173
+    L_Seq=339
     L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
-    L_step=1
+    L_up=$((L_low + 4))
+    L_step=2
     X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
-    X_step=1
+    X_up=$((X_low + 4))
+    X_step=2
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
     table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
@@ -86,35 +58,7 @@ for num_t in 32; do
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
     P_target=0.995
-    L_Seq=231
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 4))
-    L_step=2
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 4))
-    X_step=2
-    tag="${app_tag}_T${num_t}_P${P_target}"
-    eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
-    table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
-    selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
-    python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
-
-    P_target=0.997
-    L_Seq=282
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 4))
-    L_step=2
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 4))
-    X_step=2
-    tag="${app_tag}_T${num_t}_P${P_target}"
-    eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
-    table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
-    selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
-    python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
-
-    P_target=0.999
-    L_Seq=428
+    L_Seq=478
     L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
     L_up=$((L_low + 8))
     L_step=4
@@ -127,17 +71,31 @@ for num_t in 32; do
     selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
+    P_target=0.999
+    L_Seq=999
+    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+    L_up=$((L_low + 16))
+    L_step=8
+    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+    X_up=$((X_low + 16))
+    X_step=8
+    tag="${app_tag}_T${num_t}_P${P_target}"
+    eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
+    table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
+    selected_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.selected.txt"
+    python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
+
     #######
     collected_selected="output.${data}.${app_tag}_T${num_t}_collected.selected_0.txt"
     cat output.${data}.${app_tag}_T${num_t}_P0.9*.selected.txt > ${collected_selected}
     #######
     output_files="output.${data}.${app_tag}_T${num_t}_P0.9"
     table_collected="output.${data}.${app_tag}_T${num_t}_collected.table.txt"
-    selected_file="output.quick.iQAN.table.txt"
-#    selected_file="output.${data}.${app_tag}_T${num_t}_collected.selected_1.txt"
+#    selected_file="output.${data}.iQAN.table.txt"
+    selected_file="output.${data}.${app_tag}_T${num_t}_collected.selected_1.txt"
     cat ${output_files}*.table.txt > ${table_collected}
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_collected} ${selected_file} 0 2 \
-    0.900 0.950 0.990 0.995 0.997 0.999
+    0.990 0.995 0.999
 
 done
 

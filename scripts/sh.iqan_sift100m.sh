@@ -34,7 +34,7 @@ data="sift100m"
 bin="python3 ../scripts/test51.PSS_v5_dt_profiling_ranged_L.py"
 app="PSS_v5_LG_distance_threshold_profiling"
 
-app_tag="PSS_v5_dt_RT"
+app_tag="iQAN_Latency"
 ################################
 #### Latency
 ################################

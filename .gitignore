@@ -3,6 +3,7 @@ cmake-build*/
 .idea/
 venv/
 build/
+local_stuff/
 
 # MacOS
 .DS_Store

@@ -40,6 +40,8 @@ with open(sys.argv[1]) as fin, \
     for precs_bottom in bottoms:
         min_rt = sys.float_info.max
         min_id = -1
+        max_precision = 0
+        max_id = -1
 
         for row_id in range(len(table)):
             row = table[row_id]
@@ -51,10 +53,14 @@ with open(sys.argv[1]) as fin, \
             if precision >= precs_bottom and runtime < min_rt:
                 min_rt = runtime
                 min_id = row_id
+            if precision > max_precision:
+                max_precision = precision
+                max_id = row_id
         if min_id != -1:
             fout.write("\t".join(table[min_id]) + "\n")
         else:
-            fout.write(f"Not found {precs_bottom}\n")
+            # fout.write(f"Not found {precs_bottom}\n")
+            fout.write("\t".join(table[max_id]) + "\n")
 
 #
 #

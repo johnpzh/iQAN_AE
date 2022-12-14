@@ -1,5 +1,5 @@
 
-data="deep1b" # deep10m and deep100m are under folder deep1b
+data="deep1b" # deep1m, deep10m and deep100m are under folder deep1b
 data_dir=$(dirname "$0")/../data
 
 if [ ! -d "${data_dir}/${data}" ]; then

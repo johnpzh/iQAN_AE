@@ -6,13 +6,13 @@ bin_root=$(dirname "$0")/../cmake-build-release
 
 cd "${bin_root}" || exit
 
-# Run iQAN on SIFT1M
+# Run iQAN
 eval bash "${script_root}/sh.iqan_${data}.sh" "${data_root}"
 
-# Run NSG on SIFT1M
+# Run NSG
 eval bash "${script_root}/sh.nsg_${data}.sh" "${data_root}"
 
-# Run HNSW on SIFT1M
+# Run HNSW
 eval bash "${script_root}/sh.hnsw_${data}.sh" "${data_root}"
 
 # Plot the figure
