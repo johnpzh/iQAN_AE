@@ -59,7 +59,7 @@ bash ../scripts/run.quick.sh
 This script runs iQAN, NSG, and HNSW for six recall targets (Recall@100) from 0.9 to 0.999 on the dataset SIFT1M. It takes about 30 mins to finish. It can generate a figure `fig.quick.png` under the current directory `cmake-build-release`.
 
 [//]: # (## Step by Step Instructions)
-### Run Other Datasets
+### Run Other Datasets for Latency-vs-Recall Curves
 
 ```shell
 cd cmake-build-release
@@ -67,7 +67,7 @@ bash ../scripts/get.xxx.sh
 bash ../scripts/run.xxx.sh
 ```
 
-Here `xxx` can be replaced by `sift1m`, `gist1m`, `deep10m`, `sift100m`, and `deep100m`. The sizes of datasets and their estimated running time is shown in the following table.
+Here `xxx` can be replaced by `sift1m`, `gist1m`, `deep10m`, `sift100m`, and `deep100m`. The sizes of datasets and their estimated running time is shown in the following table. The `run.xxx.sh` script can generate a figure `fig.xxx.png` under `cmake-build-release`.
 
 |        Datasets       | SIFT1M | GIST1M | DEEP10M | SIFT100M | DEEP100M |
 |:---------------------:|:------:|:------:|:-------:|:--------:|:--------:|
@@ -78,3 +78,21 @@ Here `xxx` can be replaced by `sift1m`, `gist1m`, `deep10m`, `sift100m`, and `de
 | groundtruth file (MB) |    7.7 |    0.7 |     7.7 |      7.7 |      7.7 |
 |   running time (hr)   |      1 |      6 |       5 |       16 |       22 |
 
+## Run Speedup Experiments
+
+```shell
+cd cmake-build-release
+bash ../scripts/run.speedup_xxx.sh
+```
+
+Here `xxx` can be replaced by `gist1m`, `sift100m`, and `deep100m`. The `run.speedup_xxx.sh` script can generate a figure `fig.speedup.xxx.png` under `cmake-build-release`.
+
+## Run Graph-Size Scalability Experiments
+
+```shell
+cd cmake-build-release
+bash ../scripts/get.deep1m.sh # download dataset DEEP1M
+bash ../scripts/run.graph_scale.sh
+```
+
+The `run.graph_scale.sh` script can generate a figure `fig.graph_scale.png` under `cmake-build-release`.
