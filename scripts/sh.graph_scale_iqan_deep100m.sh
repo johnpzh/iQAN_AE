@@ -44,12 +44,16 @@ for num_t in 32; do
 #for num_t in 2 4 8 16 32 64; do
 ##
     P_target=0.900
-    L_Seq=120
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
+#    L_Seq=120
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+#    L_up=$((L_low + 2))
+    L_low=100
+    L_up=102
     L_step=1
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+#    X_up=$((X_low + 2))
+    X_low=4
+    X_up=6
     X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
@@ -58,13 +62,17 @@ for num_t in 32; do
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
     P_target=0.990
-    L_Seq=710
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 16))
-    L_step=8
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 16))
-    X_step=8
+#    L_Seq=710
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+#    L_up=$((L_low + 16))
+    L_low=100
+    L_up=102
+    L_step=1
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+#    X_up=$((X_low + 16))
+    X_low=31
+    X_up=33
+    X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
     table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"
@@ -72,13 +80,17 @@ for num_t in 32; do
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
     P_target=0.999
-    L_Seq=3339
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t})))
-    L_up=$((L_low + 16))
-    L_step=8
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t})))
-    X_up=$((X_low + 16))
-    X_step=8
+#    L_Seq=3339
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t})))
+#    L_up=$((L_low + 16))
+    L_low=104
+    L_up=106
+    L_step=1
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t})))
+#    X_up=$((X_low + 16))
+    X_low=112
+    X_up=114
+    X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
     table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"

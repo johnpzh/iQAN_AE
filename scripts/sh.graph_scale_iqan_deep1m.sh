@@ -43,12 +43,16 @@ app_tag="iQAN_GraphScale"
 for num_t in 32; do
 ##
     P_target=0.900
-    L_Seq=91
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
+#    L_Seq=91
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+#    L_up=$((L_low + 2))
+    L_low=91
+    L_up=93
     L_step=1
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+#    X_up=$((X_low + 2))
+    X_low=2
+    X_up=4
     X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
@@ -57,12 +61,16 @@ for num_t in 32; do
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
     P_target=0.990
-    L_Seq=203
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 2))
+#    L_Seq=203
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+#    L_up=$((L_low + 2))
+    L_low=100
+    L_up=102
     L_step=1
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 2))
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+#    X_up=$((X_low + 2))
+    X_low=9
+    X_up=11
     X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
@@ -71,13 +79,17 @@ for num_t in 32; do
     python3 ../scripts/output_find_runtime_above_presicion.py ${table_file} ${selected_file} 0 2 ${P_target}
 
     P_target=0.999
-    L_Seq=595
-    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
-    L_up=$((L_low + 8))
-    L_step=4
-    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
-    X_up=$((X_low + 8))
-    X_step=4
+#    L_Seq=595
+#    L_low=$(( $(get_L_low ${L_Seq} ${num_t}) ))
+#    L_up=$((L_low + 8))
+    L_low=100
+    L_up=102
+    L_step=1
+#    X_low=$(( $(get_X_low ${L_Seq} ${num_t}) ))
+#    X_up=$((X_low + 8))
+    X_low=26
+    X_up=28
+    X_step=1
     tag="${app_tag}_T${num_t}_P${P_target}"
     eval ${bin} ${app} ${data_dir} ${data} ${tag} ${num_t} ${L_low} ${L_up} ${L_step} 0 0 0 ${X_low} ${X_up} ${X_step} 0 0 0
     table_file="output.${data}.${app_tag}_T${num_t}_P${P_target}.table.txt"

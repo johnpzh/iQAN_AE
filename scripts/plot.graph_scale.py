@@ -32,48 +32,49 @@ iqan_latency_999 = []
 # iQAN
 for data in ["deep1m", "deep10m", "deep100m"]:
     filename = F"output.{data}.iQAN_GraphScale_T32_collected.selected_1.txt"
+    print(F"filename: {filename}")
     with open(filename) as fin:
         # Recall 0.9
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         iqan_latency_9.append(float(columns[3]))
 
         # Recall 0.99
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         iqan_latency_99.append(float(columns[3]))
 
         # Recall 0.999
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         iqan_latency_999.append(float(columns[3]))
 
     # NSG
     filename = F"output.{data}.NSG_GraphScale_find_L_collected.table.txt"
     with open(filename) as fin:
         # Recall 0.9
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         nsg_latency_9.append(float(columns[4]))
 
         # Recall 0.99
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         nsg_latency_99.append(float(columns[4]))
 
         # Recall 0.999
-        columns = filename.readline().split()
+        columns = fin.readline().split()
         nsg_latency_999.append(float(columns[4]))
 
     # HNSW
     filename = F"output.{data}.HNSW_GraphScale_find_ef_collected.table.txt"
     with open(filename) as fin:
         # Recall 0.9
-        columns = filename.readline().split()
-        hnsw_latency_9.append(float(columns[4]))
+        columns = fin.readline().split()
+        hnsw_latency_9.append(float(columns[3]))
 
         # Recall 0.99
-        columns = filename.readline().split()
-        hnsw_latency_99.append(float(columns[4]))
+        columns = fin.readline().split()
+        hnsw_latency_99.append(float(columns[3]))
 
         # Recall 0.999
-        columns = filename.readline().split()
-        hnsw_latency_999.append(float(columns[4]))
+        columns = fin.readline().split()
+        hnsw_latency_999.append(float(columns[3]))
 
 
 
