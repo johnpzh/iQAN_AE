@@ -1,0 +1,253 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for x86_64-apple-darwin20.1.0
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Wed Dec 14 02:20:07 2022
+
+# Variables
+
+# environment
+RUBY_ROOT = /Users/johnpzh/.rubies/ruby-3.1.2
+# environment
+LC_ALL = C
+# environment
+TMPDIR = /var/folders/w5/1t5h9scs791_zvmrhzfft9km0000gn/T/
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.481561273.481561279
+# environment
+VSCODE_CWD = /
+# default
+MAKE_COMMAND := make
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+COMMAND_MODE = unix2003
+# environment
+PWD = /Users/johnpzh/pppp/CLion/iQAN_AE
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+CONDA_PROMPT_MODIFIER = (base) 
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/johnpzh/Library/Application Support/Code/CachedData/5235c6bb189b60b01b1f49062f4ffa42384f8c91
+# environment
+LANG = C
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/Cellar/make/4.3/include /usr/local/include
+# environment
+GEM_PATH = /Users/johnpzh/.gem/ruby/3.1.2:/Users/johnpzh/.rubies/ruby-3.1.2/lib/ruby/gems/3.1.0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /Users/johnpzh/pppp/CLion/iQAN_AE
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.lJuWcbz2EG/Listeners
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+P9K_SSH = 0
+# makefile
+MAKEFILE_LIST := 
+# environment
+CONDA_SHLVL = 1
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /Users/johnpzh/.oh-my-zsh
+# environment
+VSCODE_PID = 1411
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+CONDA_PYTHON_EXE = /Applications/MBEDCLI.app/Contents/Resources/miniconda/bin/python
+# environment
+MallocNanoZone = 0
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-apple-darwin20.1.0
+# environment
+CONDA_PREFIX = /Applications/MBEDCLI.app/Contents/Resources/miniconda
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+RUBYOPT = 
+# environment
+SHLVL = 1
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /Applications/MBEDCLI.app/Contents/Resources/miniconda/bin:/Applications/MBEDCLI.app/Contents/Resources/miniconda/condabin:/Users/johnpzh/.gem/ruby/3.1.2/bin:/Users/johnpzh/.rubies/ruby-3.1.2/lib/ruby/gems/3.1.0/bin:/Users/johnpzh/.rubies/ruby-3.1.2/bin:/usr/local/opt/make/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/opt/X11/bin:/Library/Apple/usr/bin:/Users/johnpzh/local/bin:/usr/local/opt/llvm/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+GEM_ROOT = /Users/johnpzh/.rubies/ruby-3.1.2/lib/ruby/gems/3.1.0
+# environment
+RUBY_ENGINE = ruby
+# automatic
+?F = $(notdir $?)
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+CONDA_DEFAULT_ENV = base
+# environment
+LOGNAME = johnpzh
+# environment
+XPC_FLAGS = 0x0
+# makefile
+.DEFAULT_GOAL := 
+# environment
+DISPLAY = /private/tmp/com.apple.launchd.T9T2kQwRsj/org.xquartz:0
+# environment
+USER = johnpzh
+# default
+MAKE_VERSION := 4.3
+# environment
+PAGER = less
+# environment
+_ = /usr/local/opt/make/libexec/gnubin/make
+# environment
+GEM_HOME = /Users/johnpzh/.gem/ruby/3.1.2
+# environment
+_CE_M = 
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/johnpzh
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_IPC_HOOK = /Users/johnpzh/Library/Application Support/Code/1.74.0-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+RUBY_VERSION = 3.1.2
+# environment
+CONDA_EXE = /Applications/MBEDCLI.app/Contents/Resources/miniconda/bin/conda
+# environment
+_CE_CONDA = 
+# variable set hash-table stats:
+# Load=84/1024=8%, Rehash=0, Collisions=5/109=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777223, inode 445021312): 19 files, no impossibilities.
+
+# 19 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 27 / storage = 292 B / avg = 10 B
+# current buf: size = 8162 B / used = 292 B / count = 27 / avg = 10 B
+
+# strcache performance: lookups = 29 / hit rate = 6%
+# hash-table stats:
+# Load=27/8192=0%, Rehash=0, Collisions=0/29=0%
+# Finished Make data base on Wed Dec 14 02:20:07 2022
+
+ 
